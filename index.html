@@ -12,12 +12,65 @@
 
 
     <body>
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <button type="button" class="btn btn-default">SurveyForm</button>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Survey Form</h1>
             </div>
-        </nav>
+        </div>
 
+        <div class="container">
+            <div class="panel panel-default container">
+                <div class="panel-body border border-dark" style="text-align:center;">
+                    <h2>Student Data</h2>
+                </div>
+
+                <form class="container border border-light">
+                    <!--First name and last name-->
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <Label for="">First Name</Label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <Label for="">Last Name</Label>
+                            <input type="text" class="form-control">
+                        </div>
+                    <!--Email-->
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6 input-group">
+                            <div class="col-12" style="padding-left: 0px;">
+                                <Label for="">Year</Label>
+                            </div>
+                            <input type="Text" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle">Sophomore</button>
+                            </div>
+                        </div>
+                        <div class="col-6 input-group">
+                            <div class="col-12" style=" padding-left: 0px;">
+                                <Label>Hobbies</Label>
+                            </div>
+                            <input type="text" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle">Hobbies</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+
+            </div>
+        </div>
 
         <script src="jquery-3.6.0.js"></script>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
