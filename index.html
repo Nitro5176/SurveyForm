@@ -43,8 +43,14 @@
                                 <Label for="">Year</Label>
                             </div>
                             <input type="Text" class="form-control">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle">Sophomore</button>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonYear" data-toggle="dropdown">Other</button>
+                                <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonYear">
+                                    <a class="dropdown-item" href="#">Sophomore</a>
+                                    <a class="dropdown-item" href="#">Senior</a>
+                                    <a class="dropdown-item" href="#">Junior</a>
+                                    <a class="dropdown-item" href="#">Freshmen</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-6 input-group">
@@ -53,7 +59,14 @@
                             </div>
                             <input type="text" class="form-control">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle">Hobbies</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonHobbies" data-toggle="dropdown">Other</button>
+                                <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonHobbies">
+                                    <a class="dropdown-item" href="#">Other</a>
+                                    <a class="dropdown-item" href="#">Swimming</a>
+                                    <a class="dropdown-item" href="#">Hockey</a>
+                                    <a class="dropdown-item" href="#">Rugby</a>
+                                    <a class="dropdown-item" href="#">Reading</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,6 +86,11 @@
         </div>
 
         <script src="jquery-3.6.0.js"></script>
-        <script src="bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+        <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            function addMenuOnText(tagJquery){
+                
+            }
+        </script>
     </body>
 </html>
