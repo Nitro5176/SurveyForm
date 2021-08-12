@@ -12,6 +12,7 @@
 
 
     <body>
+        <!--us onclick="functionName($(this)); for getting the whole tag of the html"-->
         <div class="jumbotron">
             <div class="container">
                 <h1>Survey Form</h1>
@@ -28,44 +29,57 @@
                     <!--First name and last name-->
                     <div class="form-group row">
                         <div class="col-6">
-                            <Label for="">First Name</Label>
-                            <input type="text" class="form-control">
+                            <Label for="fName">First Name</Label>
+                            <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name">
                         </div>
                         <div class="col-6">
-                            <Label for="">Last Name</Label>
-                            <input type="text" class="form-control">
+                            <Label for="lName">Last Name</Label>
+                            <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name">
                         </div>
-                    <!--Email-->
                     </div>
+
+                    <!--Email-->
+                    <div class="form-group row">
+                        <div class="col-12 input-group">
+                            <div class="col-12" style="padding-left: 0px;">
+                                <Label>Student Email</Label>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Email" value="">
+                        </div>
+                    </div>
+
+                     <!--Year and Hobbies-->
                     <div class="form-group row">
                         <div class="col-6 input-group">
                             <div class="col-12" style="padding-left: 0px;">
                                 <Label for="">Year</Label>
                             </div>
-                            <input type="Text" class="form-control">
+                            <input type="Text" id="yearText"class="form-control" placeHolder="Year" value="">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonYear" data-toggle="dropdown">Other</button>
                                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonYear">
-                                    <a class="dropdown-item" href="#">Sophomore</a>
-                                    <a class="dropdown-item" href="#">Senior</a>
-                                    <a class="dropdown-item" href="#">Junior</a>
-                                    <a class="dropdown-item" href="#">Freshmen</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Other</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Sophomore</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Senior</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Junior</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Freshmen</a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-6 input-group">
                             <div class="col-12" style=" padding-left: 0px;">
-                                <Label>Hobbies</Label>
+                                <Label>Hobby</Label>
                             </div>
-                            <input type="text" class="form-control">
+                            <input type="text" id="hobbyText" class="form-control" placeholder="Hobbies"value="">
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonHobbies" data-toggle="dropdown">Other</button>
                                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonHobbies">
-                                    <a class="dropdown-item" href="#">Other</a>
-                                    <a class="dropdown-item" href="#">Swimming</a>
-                                    <a class="dropdown-item" href="#">Hockey</a>
-                                    <a class="dropdown-item" href="#">Rugby</a>
-                                    <a class="dropdown-item" href="#">Reading</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Other</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Swimming</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Hockey</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Rugby</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Reading</a>
                                 </div>
                             </div>
                         </div>
@@ -88,9 +102,30 @@
         <script src="jquery-3.6.0.js"></script>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            function addMenuOnText(tagJquery){
-                
+            function addMenuOnTextYear(tagJquery){
+                var textString2 = tagJquery.text();
+                if(textString2 === "Other"){
+                    $("#yearText").attr("placeholder", "Please enter your year");
+                    $("#yearText").val("");
+                }
+                else{
+                    $("#yearText").attr("placeholder", "year");
+                    $("#yearText").val(textString2);
+                }
             }
+
+            function addMenuOnTextHobby(tagJquery){
+                var textString2 = tagJquery.text();
+                if(textString2 === "Other"){
+                    $("#hobbyText").attr("placeholder", "Please enter a hobby");
+                    $("#hobbyText").val("");
+                }
+                else{
+                    $("#hobbyText").attr("placeholder", "Hobby");
+                    $("#hobbyText").val(textString2);
+                }
+            }
+            
         </script>
     </body>
 </html>
