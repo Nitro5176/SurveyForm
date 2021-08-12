@@ -21,7 +21,7 @@
 
         <div class="container">
             <div class="panel panel-default container">
-                <div class="panel-body border border-dark" style="text-align:center;">
+                <div class="panel-body border border-light" style="text-align:center;">
                     <h2>Student Data</h2>
                 </div>
 
@@ -30,11 +30,11 @@
                     <div class="form-group row">
                         <div class="col-6">
                             <Label for="fName">First Name</Label>
-                            <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name">
+                            <input type="text" class="form-control" id="fName" placeholder="First Name" value="">
                         </div>
                         <div class="col-6">
                             <Label for="lName">Last Name</Label>
-                            <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name">
+                            <input type="text" class="form-control" id="lName" placeholder="Last Name" value="">
                         </div>
                     </div>
 
@@ -44,9 +44,44 @@
                             <div class="col-12" style="padding-left: 0px;">
                                 <Label>Student Email</Label>
                             </div>
-                            <input type="email" class="form-control" placeholder="Email" value="">
+                            <input type="email" class="form-control" placeholder="Email" value="" required>
                         </div>
                     </div>
+
+                    <!--Program and clubs-->
+                    <div class="form-group row">
+
+                        <div class="col-6 input-group">
+                            <div class="col-12" style="padding-left: 0px;">
+                                <Label>Faculty</Label>
+                            </div>
+                            <input type="text" id="facultyText" class="form-control" placeholder="Program" value="">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonFaculty" data-toggle="dropdown"></button>
+                                <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonFaculty">
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Sciences</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Health Sciences</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Medicine</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Law</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Business</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Arts</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Education</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Social Sciences</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Engineering</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextFaculty($(this))">Other</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 input-group">
+                            <div class="col-12" style="padding-left: 0px;">
+                                <Label>Club</Label>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Club" value="">
+                        </div>
+
+                    </div>
+
 
                      <!--Year and Hobbies-->
                     <div class="form-group row">
@@ -56,13 +91,13 @@
                             </div>
                             <input type="Text" id="yearText"class="form-control" placeHolder="Year" value="">
                             <div class="dropdown">
-                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonYear" data-toggle="dropdown">Other</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonYear" data-toggle="dropdown"></button>
                                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonYear">
-                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Other</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Sophomore</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Senior</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Junior</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Freshmen</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextYear($(this))">Other</a>
                                 </div>
                             </div>
                         </div>
@@ -71,15 +106,15 @@
                             <div class="col-12" style=" padding-left: 0px;">
                                 <Label>Hobby</Label>
                             </div>
-                            <input type="text" id="hobbyText" class="form-control" placeholder="Hobbies"value="">
+                            <input type="text" id="hobbyText" class="form-control" placeholder="Hobby"value="">
                             <div class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonHobbies" data-toggle="dropdown">Other</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" id="dropDownMenuButtonHobbies" data-toggle="dropdown"></button>
                                 <div class="dropdown-menu" aria-labelledby="dropDownMenuButtonHobbies">
-                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Other</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Swimming</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Hockey</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Rugby</a>
                                     <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Reading</a>
+                                    <a class="dropdown-item" href="#" onclick="addMenuOnTextHobby($(this))">Other</a>
                                 </div>
                             </div>
                         </div>
@@ -87,11 +122,22 @@
 
                     <div class="form-group row">
                         <div class="col-12">
-                            
+                            <Label>What do you like/dislike about the campus?</Label>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" id="commentSection" row="5"></textarea>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-default">Submit</button>
+                            <button type="button" class="btn btn-default">Reset</button>
                         </div>
                     </div>
 
-
+                    
 
                 </form>
 
@@ -99,30 +145,55 @@
             </div>
         </div>
 
+        <footer class="jumbotron text-center">
+            <p>© Copyright Stephen</p>
+
+        </footer>
+
         <script src="jquery-3.6.0.js"></script>
         <script src="bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
         <script>
+            function addMenuOnTextFaculty(tagJquery){
+                var textString = tagJquery.text();
+                if(textString === "Other"){
+                    $("#facultyText").attr("placeholder", "Faculty");
+                    $("#facultyText").val("");
+                    $("#dropDownMenuButtonFaculty").val("Other");
+                }
+                else{
+                    $("#facultyText").attr("placeholder", "Faculty");
+                    $("#facultyText").val(textString);
+                    $("#dropDownMenuButtonFaculty").val(textString);
+                }
+            }
+
             function addMenuOnTextYear(tagJquery){
                 var textString2 = tagJquery.text();
                 if(textString2 === "Other"){
-                    $("#yearText").attr("placeholder", "Please enter your year");
+                    $("#yearText").attr("placeholder", "Year");
                     $("#yearText").val("");
+                    $("#dropDownMenuButtonYear").val("Other");
+                    //$("#dropDownMenuButtonYear").html(""); //Changes the value of the button
                 }
                 else{
-                    $("#yearText").attr("placeholder", "year");
+                    $("#yearText").attr("placeholder", "Year");
                     $("#yearText").val(textString2);
+                    $("#dropDownMenuButtonYear").val(textString2);
+                    //$("#dropDownMenuButtonYear").html(textString2);//Changes the value of the button
                 }
             }
 
             function addMenuOnTextHobby(tagJquery){
                 var textString2 = tagJquery.text();
                 if(textString2 === "Other"){
-                    $("#hobbyText").attr("placeholder", "Please enter a hobby");
+                    $("#hobbyText").attr("placeholder", "Hobby");
                     $("#hobbyText").val("");
+                    //$("#dropDownMenuButtonHobbies").html("");//Changes the value of the button
                 }
                 else{
                     $("#hobbyText").attr("placeholder", "Hobby");
                     $("#hobbyText").val(textString2);
+                    //$("#dropDownMenuButtonHobbies").html(textString2);//Changes the value of the button
                 }
             }
             
