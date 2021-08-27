@@ -198,7 +198,7 @@
             }
 
             function submitButton(tagJquery){
-                var firstName = $('#fname').val();
+                var firstName = $('#fName').val();
                 var lastName = $('#lName').val();
                 var studentEmail = $('#studentEmail').val();
                 var faculty= $('#facultyText').val();
@@ -207,7 +207,8 @@
                 var hobby = $('#hobbyText').val();
                 var comments = $('#commentSection').val();
 
-                 const {Client} = require('pg');
+                 //const {Client} = require('pg');
+                const http = require("http");
 
                  const client = new Client ({
                      host:"localhost",
