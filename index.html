@@ -44,7 +44,7 @@
                             <div class="col-12" style="padding-left: 0px;">
                                 <Label>Student Email</Label>
                             </div>
-                            <input type="email" class="form-control" placeholder="Email" value="" required>
+                            <input type="email" class="form-control" placeholder="Email" value="" id="studentEmail"required>
                         </div>
                     </div>
 
@@ -77,7 +77,7 @@
                             <div class="col-12" style="padding-left: 0px;">
                                 <Label>Club</Label>
                             </div>
-                            <input type="text" class="form-control" placeholder="Club" value="">
+                            <input type="text" class="form-control" placeholder="Club" id="studentClub" value="">
                         </div>
 
                     </div>
@@ -132,7 +132,7 @@
 
                     <div class="form-group row">
                         <div class="col-12">
-                            <button type="button" class="btn btn-default">Submit</button>
+                            <button type="button" class="btn btn-default" onclick="submitButton($(this))">Submit</button>
                             <button type="button" class="btn btn-default">Reset</button>
                         </div>
                     </div>
@@ -195,6 +195,41 @@
                     $("#hobbyText").val(textString2);
                     //$("#dropDownMenuButtonHobbies").html(textString2);//Changes the value of the button
                 }
+            }
+
+            function submitButton(tagJquery){
+                var firstName = $('#fname').val();
+                var lastName = $('#lName').val();
+                var studentEmail = $('#studentEmail').val();
+                var faculty= $('#facultyText').val();
+                var club = $('#studentClub').val();
+                var year = $('#yearText').val();
+                var hobby = $('#hobbyText').val();
+                var comments = $('#commentSection').val();
+
+                 const {Client} = require('pg');
+
+                 const client = new Client ({
+                     host:"localhost",
+                     user:"postgres",
+                     port: 5432,
+                     password: "password",
+                     database: "SurveryForm"
+                 })
+
+                 client.connect();
+
+                 client.query(`INSERT INTO studentinfo(FirstName, LastName, StudentEmail, Faculty, Club, currentYear, CampusComments)
+                            VALUES(firstName, lastName, studentEmail, faculty, club, year, hobby, comments);`, (err, res)=>{
+                                if(!err){
+                                    console.log("success");
+                                }
+                                else{
+                                    console.log(err.message);
+                                }
+                                client.end;
+                            })
+
             }
             
         </script>

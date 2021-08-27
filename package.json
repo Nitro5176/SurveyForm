@@ -1,0 +1,23 @@
+{
+  "name": "surveyform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery-3.6.0.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitro5176/SurveyForm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nitro5176/SurveyForm/issues"
+  },
+  "homepage": "https://github.com/Nitro5176/SurveyForm#readme",
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}
