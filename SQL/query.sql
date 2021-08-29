@@ -9,7 +9,11 @@ CREATE TABLE studentinfo (
 	StudentEmail varchar(255),
 	Faculty varchar(255),
 	Club varchar(255),
-	currentYear int,
+	currentYear varchar(255),
 	Hobby varchar(255),
 	CampusComments varchar(255)
 );
+
+
+INSERT INTO studentinfo(FirstName, LastName, StudentEmail, Faculty, Club, currentYear, hobby, CampusComments)
+VALUES('writtensadfasdf', 'what', 'what is going on ', 'sciences', 'boxing', 'Sophomore', 'Boxing', 'wrong');
