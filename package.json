@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/Nitro5176/SurveyForm#readme",
   "dependencies": {
+    "bootstrap": "^5.1.0",
+    "bootstrap4": "^0.0.1-security",
     "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "jsdom": "^17.0.0",
     "pg": "^8.7.1"
   }
 }
